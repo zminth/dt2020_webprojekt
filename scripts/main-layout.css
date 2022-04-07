@@ -62,6 +62,8 @@ body{
     font-family: "";
 }
 
+/* Headbereich */
+
 #head{
     /* Position & Weite */
     position: absolute;
@@ -92,17 +94,49 @@ body{
     
 }
 
-#head-logonUser:hover #head-logonUser-settings{
+#head-logonUser{
     /* Position */
     position: absolute;
     left: auto;
     right: 0px;
     top: auto;
     bottom: auto;
+    z-index: 0;
+
+    /* Weite & Höhe */
+    width: auto;
+    height: 50px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: yellow;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#head-logonUser:hover #head-logonUser-settings{
+    /* Position */
+    position: absolute;
+    left: auto;
+    right: 20px;
+    top: auto;
+    bottom: auto;
     z-index: 1;
 
     /* Weite & Höhe */
-    width: 150px;
+    width: 250px;
     height: 60px;
     min-width: auto;
     min-height: auto;
@@ -126,7 +160,7 @@ body{
 
 
 
-
+/* Main Bereich */
 
 
 
