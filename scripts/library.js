@@ -14,6 +14,18 @@ function createMenu() {
                 '<tr>'+
                     '<td><a href="'+hostAdress+'">Startseite</a></td>'+
                 '</tr>'+
+
+                '<tr>'+
+                    '<td><a href="'+hostAdress+'/dashboard/">Dashboard</a></td>'+
+                '</tr>'+
+
+                '<tr>'+
+                    '<td><a href="'+hostAdress+'/new_request/">Ticketerstellung</a></td>'+
+                '</tr>'+
+
+                '<tr>'+
+                    '<td><a href="'+hostAdress+'/management/">Admindashboard</a></td>'+
+                '</tr>'+
                 /* '<tr>'+
                     '<td><a href="'+hostAdress+'">Startseite</a></td>'+
                 '</tr>'+ */
