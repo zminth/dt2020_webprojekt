@@ -9,9 +9,7 @@
     </head>
 
     <body>
-        <div id="navigation">
-            <script>document.getElementById("navigation").innerHTML=createMenu();</script>
-        </div>
+        <div id="navigation"></div>
         
         <div id="head"></div>
         <div id="main">Hauptbereich</div>
