@@ -3,7 +3,7 @@
     header('Content-Type: application/json');
 
     //Serververbindung
-    $hostname="localhost"; $username="root"; $password=""; $database="ticket_db";
+    include("../generalInfomations.php");
 
     @$dbVerbindung = new mysqli($hostname, $username, $password, $database);
     if(mysqli_connect_errno() == 0){
@@ -17,9 +17,7 @@
                 'error_message' => "Data not found"
             ];
         }else{
-            while ($obj = $content->fetch_object()){
-
-            }
+            while ($obj = $content->fetch_object()){}
         }
 
     }else{
