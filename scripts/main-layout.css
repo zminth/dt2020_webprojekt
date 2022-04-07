@@ -89,21 +89,12 @@ body{
     
 }
 
-/* #main {
-    position: absolute;
-    right: 0px;
-    background: blue;
-    top: 50px;
-    height: 640px;
-    width: 1476px;
-} */
-
 #main{
     /* Position & Weite */
     position: absolute;
     left: auto;
     right: 0px;
-    top: 0px;
+    top: 50px;
     bottom: auto;
     z-index: auto;
 
