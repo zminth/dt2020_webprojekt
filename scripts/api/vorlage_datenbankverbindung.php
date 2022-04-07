@@ -23,8 +23,8 @@
     }else{
         $data = [
             'error' => "Keine Verbindung zur Datenbank",
-            'error_code' => "600",
-            'error_message' => "No Database Connection"
+            'error_code' => "503",
+            'error_message' => "Service Unavailable"
         ];
     }
 
