@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+#navigation{
+    /* Position & Weite */
+    position: fixed;
+    height: 100%;
+    width: 60px;
+
+    /* Farben */
+    background-color: red;
+}
