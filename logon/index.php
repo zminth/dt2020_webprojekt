@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        <meta charset="utf-8"/>
+        <title>Logon</title>
         <link rel="stylesheet" href="" />
-        <script src=""></script>
+        <link rel="stylesheet" href="../scripts/main-layout.css" />
+        <script src="../scripts/library.js"></script>
     </head>
 
-    <body></body>
+    <body>
+        <div id="navigation">
+            <script>document.getElementById("navigation").innerHTML=createMenu();</script>
+        </div>
+        
+        <div id="head"></div>
+        <div id="main">Hauptbereich</div>
+        <div id="footer">Fußbereich</div>
+    </body>
 </html>
