@@ -8,6 +8,7 @@
     right: 0px;
     top: auto;
     bottom: auto;
+    z-index: auto;
 
     /* Weite & Höhe */
     width: 60px;
@@ -40,6 +41,7 @@ body{
     right: auto;
     top: auto;
     bottom: auto;
+    z-index: 1;
 
     /* Weite & Höhe */
     width: 60px;
@@ -64,9 +66,10 @@ body{
     right: 0px;
     top: 0px;
     bottom: auto;
+    z-index: auto;
 
     /* Weite & Höhe */
-    width: auto;
+    width: 97%;
     height: 50px;
     min-width: auto;
     min-height: auto;
@@ -75,6 +78,45 @@ body{
 
     /* Hintergrundfabe */
     background-color: green;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+    
+}
+
+/* #main {
+    position: absolute;
+    right: 0px;
+    background: blue;
+    top: 50px;
+    height: 640px;
+    width: 1476px;
+} */
+
+#main{
+    /* Position & Weite */
+    position: absolute;
+    left: auto;
+    right: 0px;
+    top: 0px;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 1476px;
+    height: 640px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Hintergrundfabe */
+    background-color: blue;
 
     /* Textformatierung */
     color: auto;
