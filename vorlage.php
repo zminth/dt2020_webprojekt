@@ -6,6 +6,11 @@
         <link rel="stylesheet" href="" />
         <link rel="stylesheet" href="scripts/main-layout.css" />
         <script src="scripts/library.js"></script>
+        <?php
+            if($_SESSION["authentifiziert"]==false){
+                header("Location: http://127.0.0.1/logon/");
+            }
+        ?>
     </head>
 
     <body>
@@ -14,11 +19,13 @@
         </div>
         
         <div id="head">
-            <?php
-                if($session="Active"){
-                    
-                }
-            ?>
+            <div id="head-logonUser">
+                <p>Hauke, Dirk</p>
+                <div id="head-logonUser-settings">
+                    <p>Einstellungen</p>
+                    <p>Abmelden</p>
+                </div>
+            </div>
         </div>
         <div id="main">Hauptbereich</div>
         <div id="footer">Fußbereich</div>
