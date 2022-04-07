@@ -1,11 +1,13 @@
 
 
-function createMenu(input) {
+function createMenu() {
 	"use strict";
 
 	//variablen
 	var output;
-	var hostAdress = window.location.origin;
+	var hostAdress = window.location.origin+"/webprojekt/";
+
+    // Anlegend es Menüs
     output = '<nav">'+
         '<table>'+
             '<tbody>'+
