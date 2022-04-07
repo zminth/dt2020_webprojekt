@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Vorlage */
 .vorlage{
     /* Position */
     position: fixed;
@@ -11,15 +12,19 @@
     /* Weite & Höhe */
     width: 60px;
     height: 100%;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
 
     /* Hintergrundfabe */
     background-color: red;
 
     /* Textformatierung */
     color: auto;
+    font-size: auto;
+    font-family: "";
 }
-
-
 
 body{
     margin: 0px;
@@ -28,8 +33,8 @@ body{
 #navigation{
     /* Position */
     position: fixed;
-    left: auto;
-    right: 0px;
+    left: 0px;
+    right: auto;
     top: auto;
     bottom: auto;
 
@@ -42,6 +47,8 @@ body{
 
     /* Textformatierung */
     color: auto;
+    font-size: auto;
+    font-family: "";
 }
 
 #head{
@@ -49,10 +56,22 @@ body{
     position: absolute;
     left: auto;
     right: 0px;
-    top: auto;
+    top: 0px;
     bottom: auto;
 
     /* Weite & Höhe */
     width: auto;
     height: 50px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Hintergrundfabe */
+    background-color: green;
+
+    /* Textformatierung */
+    color: auto;
+    font-size: auto;
+    font-family: "";
 }
