@@ -1,11 +1,58 @@
 @charset "UTF-8";
 
-#navigation{
-    /* Position & Weite */
+.vorlage{
+    /* Position */
     position: fixed;
-    height: 100%;
-    width: 60px;
+    left: auto;
+    right: 0px;
+    top: auto;
+    bottom: auto;
 
-    /* Farben */
+    /* Weite & Höhe */
+    width: 60px;
+    height: 100%;
+
+    /* Hintergrundfabe */
     background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+}
+
+
+
+body{
+    margin: 0px;
+}
+
+#navigation{
+    /* Position */
+    position: fixed;
+    left: auto;
+    right: 0px;
+    top: auto;
+    bottom: auto;
+
+    /* Weite & Höhe */
+    width: 60px;
+    height: 100%;
+
+    /* Hintergrundfabe */
+    background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+}
+
+#head{
+    /* Position & Weite */
+    position: absolute;
+    left: auto;
+    right: 0px;
+    top: auto;
+    bottom: auto;
+
+    /* Weite & Höhe */
+    width: auto;
+    height: 50px;
 }
