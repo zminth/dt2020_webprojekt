@@ -22,6 +22,9 @@
 
     /* Textformatierung */
     color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
     font-size: auto;
     font-family: "";
 }
@@ -47,6 +50,9 @@ body{
 
     /* Textformatierung */
     color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
     font-size: auto;
     font-family: "";
 }
@@ -72,6 +78,10 @@ body{
 
     /* Textformatierung */
     color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
     font-size: auto;
     font-family: "";
+    
 }
