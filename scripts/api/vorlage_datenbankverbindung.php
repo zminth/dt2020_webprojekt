@@ -3,7 +3,7 @@
     header('Content-Type: application/json');
 
     //Serververbindung
-    include("../generalInfomations.php");
+    include("../generalInformations.php");
 
     @$dbVerbindung = new mysqli($hostname, $username, $password, $database);
     if(mysqli_connect_errno() == 0){
