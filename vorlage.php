@@ -14,13 +14,11 @@
         </div>
         
         <div id="head">
-            <div id="head-logonUser">
-                <p>Hauke, Dirk</p>
-                <div id="head-logonUser-settings">
-                    <p>Einstellungen</p>
-                    <p>Abmelden</p>
-                </div>
-            </div>
+            <?php
+                if($session="Active"){
+                    
+                }
+            ?>
         </div>
         <div id="main">Hauptbereich</div>
         <div id="footer">Fußbereich</div>

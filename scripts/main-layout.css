@@ -18,6 +18,9 @@
     max-width: auto;
     max-height: auto;
 
+    /* Elementsichbarkeit */
+    display: "";
+
     /* Hintergrundfabe */
     background-color: red;
 
@@ -88,6 +91,44 @@ body{
     font-family: "";
     
 }
+
+#head-logonUser:hover #head-logonUser-settings{
+    /* Position */
+    position: absolute;
+    left: auto;
+    right: 0px;
+    top: auto;
+    bottom: auto;
+    z-index: 1;
+
+    /* Weite & Höhe */
+    width: 150px;
+    height: 60px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: yellow;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+
+
+
+
+
 
 #main{
     /* Position & Weite */
