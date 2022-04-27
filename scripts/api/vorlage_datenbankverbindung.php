@@ -8,8 +8,9 @@
     @$dbVerbindung = new mysqli($hostname, $username, $password, $database);
     if(mysqli_connect_errno() == 0){
 
+        $sql = "";
 
-        $content = $dbVerbindung->query($mSQL);
+        $content = $dbVerbindung->query($sql);
         if ($content->num_rows == 0){
             $data = [
                 'error' => "Keine Einträge vorhanden",
