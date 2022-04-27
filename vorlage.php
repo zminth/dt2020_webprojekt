@@ -8,7 +8,7 @@
         <script src="scripts/library.js"></script>
         <!-- <?php
             if($_SESSION["authentifiziert"]==false){
-                header("Location: http://127.0.0.1:8080/webprojekt/logon/");
+                //header("Location: http://127.0.0.1:8080/webprojekt/logon/");
             }
         ?> -->
     </head>
