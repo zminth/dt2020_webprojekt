@@ -8,8 +8,9 @@
         <link rel="stylesheet" href="../scripts/dashboard.css" />
         <script src="../scripts/library.js"></script>
         <!-- <?php
+            session_start();
             if($_SESSION["authentifiziert"]==false){
-                //header("Location: http://127.0.0.1:8080/webprojekt/logon/");
+                header("Location: http://127.0.0.1:8080/webprojekt/logon/");
             }
         ?> -->
     </head>
@@ -21,11 +22,15 @@
         
         <div id="head">
             <div id="head-logonUser">
-                <!-- <p>Hauke, Dirk</p>
+                <p>
+                    <?php
+                        echo $_SESSION["username"];
+                    ?>
+                </p>
                 <div id="head-logonUser-settings">
                     <p>Einstellungen</p>
                     <p>Abmelden</p>
-                </div> -->
+                </div>
             </div>
         </div>
         <div id="main">
