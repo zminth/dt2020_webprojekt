@@ -28,9 +28,7 @@
                         echo $_SESSION["username"];
                     ?>
                 </p>
-                <div id="head-logonUser-settings">
-                    <script>document.getElementById("head-logonUser-settings").innerHTML=usermenu();</script>
-                </div>
+                <div id="head-logonUser-settings"></div>
             </div>
         </div>
         <div id="main">
