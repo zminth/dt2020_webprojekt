@@ -1,3 +1,66 @@
 @charset "UTF-8";
 
-/*  */
+/* Vorlage */
+.vorlage{
+    /* Position */
+    position: fixed;
+    left: auto;
+    right: 0px;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 60px;
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-diagram-diagramWeeklyOverview{
+    /* Position */
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 1000px;
+    height: 300px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: none;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
