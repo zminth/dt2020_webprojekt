@@ -29,8 +29,7 @@
                     ?>
                 </p>
                 <div id="head-logonUser-settings">
-                    <p>Einstellungen</p>
-                    <p>Abmelden</p>
+                    <script>document.getElementById("head-logonUser-settings").innerHTML=usermenu();</script>
                 </div>
             </div>
         </div>
