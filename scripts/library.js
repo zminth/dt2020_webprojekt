@@ -16,15 +16,15 @@ function createMenu() {
                 '</tr>'+
 
                 '<tr>'+
-                    '<td><a href="'+hostAdress+'/dashboard/">Dashboard</a></td>'+
+                    '<td><a href="'+hostAdress+'dashboard/">Dashboard</a></td>'+
                 '</tr>'+
 
                 '<tr>'+
-                    '<td><a href="'+hostAdress+'/new_request/">Ticketerstellung</a></td>'+
+                    '<td><a href="'+hostAdress+'new_request/">Ticketerstellung</a></td>'+
                 '</tr>'+
 
                 '<tr>'+
-                    '<td><a href="'+hostAdress+'/management/">Admindashboard</a></td>'+
+                    '<td><a href="'+hostAdress+'management/">Admindashboard</a></td>'+
                 '</tr>'+
                 /* '<tr>'+
                     '<td><a href="'+hostAdress+'">Startseite</a></td>'+
@@ -47,7 +47,7 @@ function userMenu() {
 
     // Anlegend es Usermenüs
     output =    '<a href="">Einstellungen</a><br/>'+
-                '<a href="'+hostAdress+'/logoff/">Abmelden</a>';
+                '<a href="'+hostAdress+'logoff/">Abmelden</a>';
 
     return output;
 }
