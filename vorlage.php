@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Dashboard - Ticketsystem</title>
+        <title>Vorlage</title>
         <link rel="stylesheet" href="" />
         <link rel="stylesheet" href="../scripts/main-layout.css" />
         <link rel="stylesheet" href="../scripts/dashboard.css" />
