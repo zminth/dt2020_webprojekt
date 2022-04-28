@@ -7,12 +7,12 @@
         <link rel="stylesheet" href="../scripts/main-layout.css" />
         <link rel="stylesheet" href="../scripts/dashboard.css" />
         <script src="../scripts/library.js"></script>
-        <!-- <?php
+        <?php
             session_start();
             if($_SESSION["authentifiziert"]==false){
                 header("Location: http://127.0.0.1:8080/webprojekt/logon/");
             }
-        ?> -->
+        ?>
     </head>
 
     <body>
@@ -28,8 +28,7 @@
                     ?>
                 </p>
                 <div id="head-logonUser-settings">
-                    <p>Einstellungen</p>
-                    <p>Abmelden</p>
+                    <script>document.getElementById("head-logonUser-settings").innerHTML=userMenu();</script>
                 </div>
             </div>
         </div>

@@ -7,13 +7,11 @@
         <link rel="stylesheet" href="../scripts/main-layout.css" />
         <link rel="stylesheet" href="../scripts/dashboard.css" />
         <script src="../scripts/library.js"></script>
-        <!-- <?php
+        <?php
             session_start();
             session_destroy();
-            if($_SESSION["authentifiziert"]==false){
-                header("Location: http://127.0.0.1:8080/webprojekt/logon/");
-            }
-        ?> -->
+            header("Location: http://127.0.0.1:8080/webprojekt/logon/");
+        ?>
     </head>
 
     <body>
@@ -28,7 +26,9 @@
                         echo $_SESSION["username"];
                     ?>
                 </p>
-                <div id="head-logonUser-settings"></div>
+                <div id="head-logonUser-settings">
+                    <script>document.getElementById("head-logonUser-settings").innerHTML=usermenu();</script>
+                </div>
             </div>
         </div>
         <div id="main">

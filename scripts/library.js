@@ -45,9 +45,9 @@ function userMenu() {
 	var output;
 	var hostAdress = window.location.origin+"/webprojekt/";
 
-    // Anlegend es Menüs
-    output =    '<a href="">Einstellungen</a>'+
-                '<a href="../logoff/">Abmelden</a>';
+    // Anlegend es Usermenüs
+    output =    '<a href="">Einstellungen</a><br/>'+
+                '<a href="'+hostAdress+'/logoff/">Abmelden</a>';
 
     return output;
 }
