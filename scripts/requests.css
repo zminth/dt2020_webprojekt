@@ -1,3 +1,274 @@
 @charset "UTF-8";
 
 /* Vorlage */
+.vorlage{
+    /* Position */
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: auto;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-ueberischtVerwaltung, #main-ticketübersicht{
+    /* Position */
+    position: absolute;
+    left: 20px;
+    right: auto;
+    top: 50px;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 1398px;
+    height: 40px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-ticketübersicht{
+    top: 115px !important;
+    width: 1394px !important;
+    height: auto !important;
+}
+
+#ticketfilter{
+    /* Position */
+    position: absolute;
+    left: 10px;
+    right: auto;
+    top: 10px;
+    bottom: 10px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 250px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: "";
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+
+
+/* Ansicht der Tickets */
+
+.ticket-row{
+    /* Position */
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 100%;
+    height: 30px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: green;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+
+    /* Rahmen */
+    border-color: black;
+    border-width: 1px 2px 1px 2px;
+    border-style: solid;
+
+}
+
+.ticket-nummer{
+    /* Position */
+    position: absolute;
+    left: 10px;
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 75px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.ticket-prio{
+    /* Position */
+    position: absolute;
+    left: 110px;
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 20px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.ticket-betreff{
+    /* Position */
+    position: absolute;
+    left: 160px;
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 400px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.ticket-status{
+    /* Position */
+    position: absolute;
+    left: 580px;
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 115px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.ticket-ersteller{
+    /* Position */
+    position: absolute;
+    left: 710px;
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 150px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.ticket-kategorie{
+    /* Position */
+    position: absolute;
+    left: 880px;
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 120px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.ticket-erstelldatum{
+    /* Position */
+    position: absolute;
+    left: 1010px;
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 100px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.ticket-abschlussdatum{
+    /* Position */
+    position: absolute;
+    left: 1120px;
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 100px;
+    height: 20px;
+    min-width: auto;
+    min-height: auto;
+}

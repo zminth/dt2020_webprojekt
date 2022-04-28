@@ -32,7 +32,32 @@
                 </div>
             </div>
         </div>
-        <div id="main">Hautpbereich</div>
+        <div id="main">
+            <div id="main-ueberischtVerwaltung">
+                <select id="ticketfilter" name="" onChange="" >
+                    <option value="">Alle Anfragen</option>
+                    <option value="">Nicht zugewiesene Anfragen</option>
+                    <option value="">Meine offenen Anfragen</option>
+                    <option value="">Meine ausstehenden Anfragen</option>
+                    <option value="">Meine erledigen Anfragen</option>
+                    <option value="">Alle wartenden Anfragen</option>
+                </select>
+            </div>
+
+            <div id="main-ticketübersicht">
+                <div class="ticket-row">
+                    <div class="ticket-nummer">359590</div>
+                    <div class="ticket-prio">2</div>
+                    <div class="ticket-betreff">PC defekt</div>
+                    <div class="ticket-status">geöffnet</div>
+                    <div class="ticket-ersteller">Schmitt, Peter</div>
+                    <div class="ticket-kategorie">Hardware</div>
+                    <div class="ticket-erstelldatum">27.04.2022</div>
+                    <div class="ticket-abschlussdatum">06.05.2022</div>
+                </div>
+
+            </div>
+        </div>
         <div id="footer">Fußbereich</div>
     </body>
 </html>

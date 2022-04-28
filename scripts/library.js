@@ -190,3 +190,5 @@ function diagramPerWorker(){
     }
   
 }
+
+
