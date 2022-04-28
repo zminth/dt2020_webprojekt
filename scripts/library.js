@@ -35,3 +35,19 @@ function createMenu() {
 
     return output;
 }
+
+
+
+function userMenu() {
+	"use strict";
+
+	//variablen
+	var output;
+	var hostAdress = window.location.origin+"/webprojekt/";
+
+    // Anlegend es Menüs
+    output =    '<a href="">Einstellungen</a>'+
+                '<a href="../logoff/">Abmelden</a>';
+
+    return output;
+}
