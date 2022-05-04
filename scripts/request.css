@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+/* Vorlage */
+.vorlage{
+    /* Position */
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: auto;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-header, #main-body{
+    /* Position */
+    position: absolute;
+    left: 20px;
+    right: auto;
+    top: 50px;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 1398px;
+    height: 60px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+#main-body{
+    top: 115px !important;
+    width: 1368px !important;
+    height: auto !important;
+    background-color: green !important;
+    padding: 15px;
+}
+
+#main-header-ticketid {
+    /* Position */
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 17.5px;
+    bottom: 7.5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 100px;
+    height: 25px;
+    min-width: auto;
+    min-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: "none";
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: 15pt;
+    font-family: "";
+}
+
+#main-header-ticketbetreff {
+    /* Position */
+    position: absolute;
+    left: 150px;
+    right: auto;
+    top: 7.5px;
+    bottom: 7.5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: max-content;
+    height: 25px;
+    min-width: auto;
+    min-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: "none";
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: 15pt;
+    font-family: "";
+}
+
+#main-header-anfragename {
+    /* Position */
+    position: absolute;
+    left: 150px;
+    right: auto;
+    top: 32.5px;
+    bottom: 7.5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 200px;
+    height: 25px;
+    min-width: auto;
+    min-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: "none";
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-header-fertigstellungsDatum {
+    /* Position */
+    position: absolute;
+    left: 450px;
+    right: auto;
+    top: 32.5px;
+    bottom: 7.5px;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: max-content;
+    height: 25px;
+    min-width: auto;
+    min-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: "none";
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-ticketEinstellungen {
+    /* Position */
+    position: absolute;
+    left: auto;
+    right: 5px;
+    top: 5px;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 250px;
+    height: 130px;
+    min-width: auto;
+    min-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: "none";
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+    position: absolute;
+}
+
+#main-ticket-noteArea {
+    width: 800px;
+    position: relative;
+    height: 150px;
+    bottom: 0px;
+}
+
+#main-ticket-createNote{
+    /* Position */
+    position: unset;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 800px;
+    height: 100px;
+    min-width: auto;
+    min-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: "none";
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-ticket-displayNotes {
+    margin-top: 40px;
+}
+
+.displayNote {
+    position: relative;
+}
+#main-ticket-displayNote-time {
+    width: 150px;
+    position: absolute;
+}
+
+#main-ticket-displayNote-creator {
+    position: absolute;
+    left: 150px;
+    width: max-content;
+}
+
+#main-ticket-displayNote-message {
+    position: absolute;
+    top: 30px;
+}
