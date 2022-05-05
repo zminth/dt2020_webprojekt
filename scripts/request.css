@@ -264,19 +264,20 @@
 
 .displayNote {
     position: relative;
+    margin-bottom: 20px;
 }
 #main-ticket-displayNote-time {
     width: 150px;
-    position: absolute;
+    position: relative;
 }
 
 #main-ticket-displayNote-creator {
     position: absolute;
     left: 150px;
+    top: 0px;
     width: max-content;
 }
 
 #main-ticket-displayNote-message {
-    position: absolute;
-    top: 30px;
+    margin-top: 10px;
 }

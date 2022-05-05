@@ -48,7 +48,7 @@
                 <div class="ticket-row">
                     <div class="ticket-nummer">359590</div>
                     <div class="ticket-prio">2</div>
-                    <div class="ticket-betreff">PC defekt</div>
+                    <div class="ticket-betreff"><a href="../request/?id=359590">PC defekt</a></div>
                     <div class="ticket-status">geöffnet</div>
                     <div class="ticket-ersteller">Schmitt, Peter</div>
                     <div class="ticket-kategorie">Hardware</div>

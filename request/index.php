@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../scripts/main-layout.css" />
         <link rel="stylesheet" href="../scripts/request.css" />
         <script src="../scripts/library.js"></script>
+        <script src="../scripts/jquery-3.6.0.js"></script>
         <?php
             session_start();
             if($_SESSION["authentifiziert"]==false){
@@ -22,11 +23,9 @@
         
         <div id="head">
             <div id="head-logonUser">
-                <p>
                     <?php
-                        echo $_SESSION["username"];
+                        echo '<div id="head-logonUser-username" style="margin: 16px 0px 16px 0px;">'.$_SESSION["username"].'</div>';
                     ?>
-                </p>
                 <div id="head-logonUser-settings">
                     <script>document.getElementById("head-logonUser-settings").innerHTML=userMenu();</script>
                 </div>
@@ -99,7 +98,7 @@
                 </table>
                 <div id="main-ticket-noteArea">
                     <textarea name="" id="main-ticket-createNote" cols="30" rows="10"></textarea>
-                    <button style="width: max-content;position: absolute;top: 120px;right: 0px;">Hinweis hinzufügen</button>
+                    <button style="width: max-content;position: absolute;top: 120px;right: 0px;" onClick="addNote();">Hinweis hinzufügen</button>
                     <div id="main-ticket-displayNotes">
                         <div class="displayNote" >
                             <div id="main-ticket-displayNote-time">04.05.2022 14:12</div>
