@@ -70,6 +70,10 @@
     padding: 15px;
 }
 
+#main-ticket-beschreibung{
+    margin-bottom: 20px;
+}
+
 #main-header-ticketid {
     /* Position */
     position: absolute;
@@ -224,7 +228,7 @@
 #main-ticket-noteArea {
     width: 800px;
     position: relative;
-    height: 150px;
+    height: max-content;
     bottom: 0px;
 }
 
@@ -262,10 +266,12 @@
     margin-top: 40px;
 }
 
+
 .displayNote {
     position: relative;
     margin-bottom: 20px;
 }
+
 #main-ticket-displayNote-time {
     width: 150px;
     position: relative;
