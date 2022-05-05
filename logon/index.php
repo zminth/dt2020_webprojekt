@@ -21,7 +21,7 @@
                 $_SESSION["authentifiziert"]=true;
                 $_SESSION["username"]=$_POST["user"];
 
-                header("Location: http://127.0.0.1:8080/webprojekt/dashboard/");
+                header("Location: ../dashboard/");
             }
         ?>
     </head>

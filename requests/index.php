@@ -8,10 +8,7 @@
         <link rel="stylesheet" href="../scripts/requests.css" />
         <script src="../scripts/library.js"></script>
         <?php
-            session_start();
-            if($_SESSION["authentifiziert"]==false){
-                header("Location: http://127.0.0.1:8080/webprojekt/logon/");
-            }
+            include("../scripts/checkAuthenificationState.php");
         ?>
     </head>
 

@@ -9,10 +9,7 @@
         <script src="../scripts/library.js"></script>
         <script src="../scripts/loader.js"></script> <!-- Framework Link: https://www.gstatic.com/charts/loader.js -->
         <?php
-            session_start();
-            if($_SESSION["authentifiziert"]==false){
-                header("Location: http://127.0.0.1:8080/webprojekt/logon/");
-            }
+            include("../scripts/checkAuthenificationState.php");
         ?>
     </head>
 

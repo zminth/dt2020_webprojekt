@@ -7,12 +7,9 @@
         <link rel="stylesheet" href="../scripts/main-layout.css" />
         <link rel="stylesheet" href="../scripts/dashboard.css" />
         <script src="../scripts/library.js"></script>
-        <!-- <?php
-            session_start();
-            if($_SESSION["authentifiziert"]==false){
-                header("Location: http://127.0.0.1:8080/webprojekt/logon/");
-            }
-        ?> -->
+        <?php
+            include("../scripts/checkAuthenificationState.php");
+        ?>
     </head>
 
     <body>
