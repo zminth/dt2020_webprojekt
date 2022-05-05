@@ -97,7 +97,7 @@
                     </tbody>
                 </table>
                 <div id="main-ticket-noteArea">
-                    <textarea name="" id="main-ticket-createNote" cols="30" rows="10"></textarea>
+                    <textarea name="" id="main-ticket-createNote" cols="30" rows="10" style="resize: none;" ></textarea>
                     <button style="width: max-content;position: absolute;top: 120px;right: 0px;" onClick="addNote();">Hinweis hinzufügen</button>
                     <div id="main-ticket-displayNotes">
                         <div class="displayNote" >
