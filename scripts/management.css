@@ -1,0 +1,10 @@
+
+
+#main-body {
+    position: absolute;
+    background: blue;
+    left: 20px;
+    top: 50px;
+    width: 1398px;
+    height: max-content;
+  }
