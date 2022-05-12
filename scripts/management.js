@@ -25,6 +25,26 @@ function benutzerAnlegen(){
     document.getElementById("main-body-window-userCreation").style.display = "block";
 }
 
+function gruppeAnlegen(){
+    "use strict";
+
+    //Variablen
+
+    document.getElementById("main-body-window").style.display = "block";
+    document.getElementById("main-body-window-groupManagement").style.display = "block";
+}
+
+function kategorieAnlegen(){
+    "use strict";
+
+    //Variablen
+
+    document.getElementById("main-body-window").style.display = "block";
+    document.getElementById("main-body-window-category").style.display = "block";
+}
+
+
+
 function generateUserName(){
     "use strict";
 
@@ -64,6 +84,50 @@ function saveNewUser(){
         data: { vorname: firstName, nachname: lastName, benutzername: userName, key: password, group: gruppe, abteilung: abteilung, mail: mail  }
       }).done(function( msg ) {
             document.getElementById("main-body-windows-userCreation-message").innerHTML = msg;
+            //console.log(msg);
+            //msg = JSON.parse(msg);
+            //document.getElementById("main-body-windows-userCreation-message").appendChild(document.createTextNode(msg.error));
+
+        });
+
+    //document.getElementById("main-body-window-userCreation-userName").value=document.getElementById("main-body-window-userCreation-firstName").value
+}
+
+function saveNewGroup(){
+    "use strict";
+    //Variablen
+    const groupName = document.getElementById("main-body-window-groupManagement-name").value;
+    const beschreibung = document.getElementById("main-body-window-groupManagement-description").value;
+
+    console.log( firstName, lastName, userName, password);
+
+    $.ajax({
+        method: "POST",
+        url: "../scripts/api/createNewGroup.php",
+        data: { groupName: groupName, description: beschreibung }
+      }).done(function( msg ) {
+            document.getElementById("main-body-windows-groupManagement-message").innerHTML = msg;
+            //console.log(msg);
+            //msg = JSON.parse(msg);
+            //document.getElementById("main-body-windows-userCreation-message").appendChild(document.createTextNode(msg.error));
+
+        });
+
+    //document.getElementById("main-body-window-userCreation-userName").value=document.getElementById("main-body-window-userCreation-firstName").value
+}
+
+function saveNewCategory(){
+    "use strict";
+    //Variablen
+    const categoryName = document.getElementById("main-body-window-category-name").value;
+    const beschreibung = document.getElementById("main-body-window-category-description").value;
+
+    $.ajax({
+        method: "POST",
+        url: "../scripts/api/createNewGroup.php",
+        data: { categoryName: categoryName, description: beschreibung }
+      }).done(function( msg ) {
+            document.getElementById("main-body-windows-groupManagement-message").innerHTML = msg;
             //console.log(msg);
             //msg = JSON.parse(msg);
             //document.getElementById("main-body-windows-userCreation-message").appendChild(document.createTextNode(msg.error));

@@ -84,7 +84,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button>Gruppe hinzufügen</button>
+                    <button onClick="gruppeAnlegen();" >Gruppe hinzufügen</button>
                 </div>
 
                 <div id="main-body-kategory-overview" style="display: none;">
@@ -100,9 +100,10 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button>Kategorie hinzufügen</button>
+                    <button onClick="kategorieAnlegen();">Kategorie hinzufügen</button>
                 </div>
 
+                <!-- Pop-Up Fenster -->
                 <div id="main-body-window" style="display: none;" >
                     <div id="main-body-window-userCreation" style="display: none;" >
                         <div id="main-body-window-userCreation-close" onClick="document.getElementById('main-body-window').style.display = 'none';document.getElementById('main-body-window-userCreation').style.display = 'none';">X</div>
@@ -193,17 +194,54 @@
                         <div id="main-body-windows-userCreation-message"></div>
                     </div>
 
-                    <div id="main-body-window-groupManagement">
+                    <div id="main-body-window-groupManagement" style="display: none;" >
+                        <div id="main-body-window-groupManagement-close" onClick="document.getElementById('main-body-window').style.display = 'none';document.getElementById('main-body-window-groupManagement').style.display = 'none';">X</div>
                         <table>
                             <thead>
                                 <td></td>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td></td>
+                                    <td>Gruppenname</td>
+                                    <td>
+                                        <input type="text" id="main-body-window-groupManagement-name" name="" placeholder="Gruppenname" autocomplete="off"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Beschreibung</td>
+                                    <td>
+                                        <input type="text" id="main-body-window-groupManagement-description" name="" placeholder="Beschreibung" autocomplete="off"/>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+                        <button onClick="saveNewGroup();">Gruppe anlegen</button>
+                        <div id="main-body-windows-groupManagement-message"></div>
+                    </div>
+
+                    <div id="main-body-window-category" style="display: none;" >
+                        <div id="main-body-window-category-close" onClick="document.getElementById('main-body-window').style.display = 'none';document.getElementById('main-body-window-category').style.display = 'none';">X</div>
+                        <table>
+                            <thead>
+                                <td></td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Kategorie</td>
+                                    <td>
+                                        <input type="text" id="main-body-window-category-name" name="" placeholder="Kategoriename" autocomplete="off"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Beschreibung</td>
+                                    <td>
+                                        <input type="text" id="main-body-window-category-description" name="" placeholder="Beschreibung" autocomplete="off"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button onClick="saveNewCategory();">Kategorie anlegen</button>
+                        <div id="main-body-windows-category-message"></div>
                     </div>
                 </div>
             </div>
