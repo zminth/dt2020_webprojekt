@@ -39,3 +39,67 @@
     width: 1398px;
     height: max-content;
 }
+
+#main-body-nav-users {
+    position: relative;
+    width: 170px;
+    height: 31px;
+    text-align: center;
+    background: red;
+    font-size: 14pt;
+    padding-top: 9px;
+    user-select: none;
+    cursor: pointer;
+}
+
+#main-body-nav-groups {
+    position: absolute;
+    width: 170px;
+    height: 31px;
+    text-align: center;
+    background: red;
+    font-size: 14pt;
+    padding-top: 9px;
+    user-select: none;
+    cursor: pointer;
+    left: 170px;
+    top: 0px;
+}
+
+#main-body-nav-kategory {
+    position: absolute;
+    width: 170px;
+    height: 31px;
+    text-align: center;
+    background: red;
+    font-size: 14pt;
+    padding-top: 9px;
+    user-select: none;
+    cursor: pointer;
+    left: 340px;
+    top: 0px;
+}
+
+#main-body-window {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    /* background-color: green; */
+    top: 0px;
+}
+
+#main-body-window-userCreation {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+}
+
+#main-body-window-userCreation-close {
+    position: absolute;
+    right: 6px;
+    font-size: 20pt;
+    user-select: none;
+}
