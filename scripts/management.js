@@ -124,7 +124,7 @@ function saveNewCategory(){
 
     $.ajax({
         method: "POST",
-        url: "../scripts/api/createNewGroup.php",
+        url: "../scripts/api/createNewCategory.php",
         data: { categoryName: categoryName, description: beschreibung }
       }).done(function( msg ) {
             document.getElementById("main-body-windows-groupManagement-message").innerHTML = msg;
