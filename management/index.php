@@ -144,7 +144,7 @@
                                         <select name="" id="main-body-window-userCreation-abteilung">
                                             <script>
                                                 xhttp = new XMLHttpRequest();
-                                                xhttp.open("GET", "../scripts/api/getCategory.php", false);
+                                                xhttp.open("GET", "../scripts/api/getAbteilungen.php", false);
                                                 xhttp.send();
                                                 const abteilungen = JSON.parse(xhttp.response);
                                                 a=0;
@@ -232,12 +232,12 @@
                                         <input type="text" id="main-body-window-category-name" name="" placeholder="Kategoriename" autocomplete="off"/>
                                     </td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td>Beschreibung</td>
                                     <td>
                                         <input type="text" id="main-body-window-category-description" name="" placeholder="Beschreibung" autocomplete="off"/>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                         <button onClick="saveNewCategory();">Kategorie anlegen</button>
