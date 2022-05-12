@@ -8,17 +8,16 @@
     //Variablen
     $a = 0;
     $categoryName = $_POST["categoryName"];
-    $beschreibung = $_POST["description"];
 
     @$dbVerbindung = new mysqli($hostname, $username, $password, $database);
     if(mysqli_connect_errno() == 0){
 
-        $sql = "INSERT INTO benutzergruppen (Gruppe, Gruppenbeschreibung) VALUES ('$categoryName', '$beschreibung');";
+        $sql = "INSERT INTO `kategorie`(`Kategorie`) VALUES ('$categoryName');";
         //echo "$sql";
 
         echo "Kategorie wurde angelegt!";
 
-        //$content = $dbVerbindung->query($sql);
+        $content = $dbVerbindung->query($sql);
         
 
         /* $sql = "SELECT * FROM `benutzer` WHERE `EMail`='$vorname.$nachname@ticketsystem.de';";

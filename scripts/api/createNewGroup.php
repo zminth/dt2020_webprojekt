@@ -18,7 +18,7 @@
 
         echo "Gruppe wurde angelegt!";
 
-        //$content = $dbVerbindung->query($sql);
+        $content = $dbVerbindung->query($sql);
         
 
         /* $sql = "SELECT * FROM `benutzer` WHERE `EMail`='$vorname.$nachname@ticketsystem.de';";

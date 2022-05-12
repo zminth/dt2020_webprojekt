@@ -118,14 +118,14 @@ function saveNewCategory(){
     "use strict";
     //Variablen
     const categoryName = document.getElementById("main-body-window-category-name").value;
-    const beschreibung = document.getElementById("main-body-window-category-description").value;
+    //const beschreibung = document.getElementById("main-body-window-category-description").value;
 
     $.ajax({
         method: "POST",
         url: "../scripts/api/createNewCategory.php",
-        data: { categoryName: categoryName, description: beschreibung }
+        data: { categoryName: categoryName }
       }).done(function( msg ) {
-            document.getElementById("main-body-windows-groupManagement-message").innerHTML = msg;
+            document.getElementById("main-body-windows-category-message").innerHTML = msg;
             //console.log(msg);
             //msg = JSON.parse(msg);
             //document.getElementById("main-body-windows-userCreation-message").appendChild(document.createTextNode(msg.error));
