@@ -24,7 +24,7 @@ function createMenu() {
                 '</tr>'+
 
                 '<tr>'+
-                    '<td><a href="'+hostAdress+'new_request/">Ticketerstellung</a></td>'+
+                    '<td><a href="'+hostAdress+'newRequest/">Ticketerstellung</a></td>'+
                 '</tr>'+
 
                 '<tr>'+
