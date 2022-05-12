@@ -99,8 +99,6 @@ function saveNewGroup(){
     const groupName = document.getElementById("main-body-window-groupManagement-name").value;
     const beschreibung = document.getElementById("main-body-window-groupManagement-description").value;
 
-    console.log( firstName, lastName, userName, password);
-
     $.ajax({
         method: "POST",
         url: "../scripts/api/createNewGroup.php",
