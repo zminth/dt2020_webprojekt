@@ -2,118 +2,130 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Anfrage 359590</title>
+        <title>Requests - Ticketsystem</title>
         <link rel="stylesheet" href="" />
         <link rel="stylesheet" href="../scripts/main-layout.css" />
-        <link rel="stylesheet" href="../scripts/request.css" />
+        <link rel="stylesheet" href="../scripts/requests.css" />
         <script src="../scripts/library.js"></script>
-        <script src="../scripts/jquery-3.6.0.js"></script>
         <?php
             include("../scripts/checkAuthenificationState.php");
         ?>
     </head>
 
-    <body style="overflow: hidden;">
+    <body style="overflow: hidden;" >
         <div id="navigation">
             <script>document.getElementById("navigation").innerHTML=createMenu();</script>
         </div>
         
         <div id="head">
             <div id="head-logonUser">
+                <p>
                     <?php
-                        echo '<div id="head-logonUser-username" style="margin: 16px 0px 16px 0px;">'.$_SESSION["username"].'</div>';
+                        echo $_SESSION["username"];
                     ?>
+                </p>
                 <div id="head-logonUser-settings">
                     <script>document.getElementById("head-logonUser-settings").innerHTML=userMenu();</script>
                 </div>
             </div>
         </div>
         <div id="main">
-            <div id="main-header">
-                <div id="main-header-ticketid">359590</div>
-                <div id="main-header-ticketbetreff">PC defekt</div>
-                <div id="main-header-anfragename">Anfragename: Schmitt, Peter</div>
-                <div id="main-header-fertigstellungsDatum">Fälligkeitsdatum: 06.05.2022 10:27</div>
+            <div id="main-ueberischtVerwaltung">
+                <select id="ticketfilter" name="" onChange="" >
+                    <option value="">Alle Anfragen</option>
+                    <option value="">Nicht zugewiesene Anfragen</option>
+                    <option value="">Meine offenen Anfragen</option>
+                    <option value="">Meine ausstehenden Anfragen</option>
+                    <option value="">Meine erledigen Anfragen</option>
+                    <option value="">Alle wartenden Anfragen</option>
+                </select>
             </div>
 
-            <div id="main-body">
-                <div id="main-ticket-beschreibung">Hallo wertes IT-Team, <br> können Sie bitte dafür sorgen, dass ich meinen PC wieder benutzen kann?<br/> Gruß<br/> Peter Schmitt</div>
-                <table id="main-ticketEinstellungen">
-                    <tbody>
-                        <tr>
-                            <td>Prio:</td>
-                            <td>
-                                <select name="" id="">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Status:</td>
-                            <td>
-                                <select name="" id="">
-                                    <option value="">Geöffnet</option>
-                                    <option value="">Warten</option>
-                                    <option value=""></option>
-                                    <option value="">Geschlossen</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Techniker:</td>
-                            <td>
-                                <select name="" id="">
-                                    <option value="">Hauke, Dirk</option>
-                                    <option value="">Alfs, Jerome</option>
-                                    <option value="">Hagedorn, Kevin</option>
-                                    <option value="">Weigand, Dominik</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Erstelldatum:</td>
-                            <td>
-                                27.04.2022 10:27
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kategorie:</td>
-                            <td>
-                                <select name="" id="">
-                                    <option value="">Hardware</option>
-                                    <option value="">Software</option>
-                                    <option value="">Usermanagement</option>
-                                    <option value="">Netzwerk</option>
-                                    <option value="">Sonstige</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="main-ticket-noteArea">
-                    <textarea name="" id="main-ticket-createNote" cols="30" rows="10" style="resize: none;" ></textarea>
-                    <button style="width: max-content;position: absolute;top: 120px;right: 0px;" onClick="addNote();">Hinweis hinzufügen</button>
-                    <div id="main-ticket-displayNotes">
-                        <div class="displayNote" >
-                            <div id="main-ticket-displayNote-time">04.05.2022 14:12</div>
-                            <div id="main-ticket-displayNote-creator">Hauke, Dirk</div>
-                            <div id="main-ticket-displayNote-message">Dies ist ein Hinweis!</div>
-                        </div>
-                        
-                    </div>
+            <div id="main-ticketübersicht">
+                <div class="ticket-row">
+                    <div class="ticket-nummer">359590</div>
+                    <div class="ticket-prio">2</div>
+                    <div class="ticket-betreff"><a href="../request/?id=359590">PC defekt</a></div>
+                    <div class="ticket-status">geöffnet</div>
+                    <div class="ticket-ersteller">Schmitt, Peter</div>
+                    <div class="ticket-kategorie">Hardware</div>
+                    <div class="ticket-erstelldatum">27.04.2022</div>
+                    <div class="ticket-abschlussdatum">06.05.2022</div>
                 </div>
-                
+                <script>
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.open("GET", "../scripts/api/getTickets.php", false);
+                    xhttp.send();
+
+                    const tickets = JSON.parse(xhttp.response);
+
+                    var ticketRow, ticketNummer, ticketPrio, ticketBetreff, link, ticketStatus, ticketErsteller, ticketKategorie, ticketErstellDatum, ticketAbschlussDatum, a;
+                    var element = document.getElementById("main-ticketübersicht");
+                    var a = 0;
+
+                    while(tickets[a]){
+                        //Ticketzeile erstellen
+                        ticketRow = document.createElement("div");
+                        ticketRow.setAttribute("class", "ticket-row");
+                        
+                        //Ticketnummer
+                        ticketNummer = document.createElement("div");
+                        ticketNummer.setAttribute("class", "ticket-nummer");
+                        ticketNummer.appendChild(document.createTextNode(tickets[a].TicketID));
+                        ticketRow.appendChild(ticketNummer);
+
+                        //Ticket-Prio hinzufügen
+                        ticketPrio = document.createElement("div");
+                        ticketPrio.setAttribute("class","ticket-prio");
+                        ticketPrio.appendChild(document.createTextNode(tickets[a].PrioID));
+                        ticketRow.appendChild(ticketPrio);
+
+                        //Ticketbetreff einfügen
+                        ticketBetreff = document.createElement("div");
+                        ticketBetreff.setAttribute("class","ticket-betreff");
+                        link = document.createElement("a");
+                        link.setAttribute("href", "../request/?id="+tickets[a].TicketID);
+                        link.appendChild(document.createTextNode(tickets[a].Titel));
+                        ticketBetreff.appendChild(link);
+                        ticketRow.appendChild(ticketBetreff);
+
+                        //Ticketstatus
+                        ticketStatus = document.createElement("div");
+                        ticketStatus.setAttribute("class","ticket-status");
+                        ticketStatus.appendChild(document.createTextNode(tickets[a].StatusID));
+                        ticketRow.appendChild(ticketStatus);
+
+                        //Ticketersteller
+                        ticketErsteller = document.createElement("div");
+                        ticketErsteller.setAttribute("class","ticket-ersteller");
+                        ticketErsteller.appendChild(document.createTextNode(tickets[a].ersteller));
+                        ticketRow.appendChild(ticketErsteller);
+
+                        //Ticketkategorie
+                        ticketKategorie = document.createElement("div");
+                        ticketKategorie.setAttribute("class","ticket-kategorie");
+                        ticketKategorie.appendChild(document.createTextNode(tickets[a].KategorieID));
+                        ticketRow.appendChild(ticketKategorie);
+
+                        //TicketErstellDatum
+                        ticketErstellDatum = document.createElement("div");
+                        ticketErstellDatum.setAttribute("class","ticket-erstelldatum");
+                        ticketErstellDatum.appendChild(document.createTextNode(tickets[a].creationDate));
+                        ticketRow.appendChild(ticketErstellDatum);
+
+                        //TicketAbschlussDatum
+                        ticketAbschlussDatum = document.createElement("div");
+                        ticketAbschlussDatum.setAttribute("class","ticket-abschlussdatum");
+                        ticketAbschlussDatum.appendChild(document.createTextNode("abschluss"));
+                        ticketRow.appendChild(ticketAbschlussDatum);
+
+                        //Ticket-Zeile der Übersicht hinzufügen
+                        element.appendChild(ticketRow);
+                        a++;
+                    }
+                </script>
             </div>
         </div>
         <div id="footer">Fußbereich</div>
     </body>
-    <script>
-        var url = window.location;
-        url = new URL(url);
-        var id = url.searchParams.get("id");
-        console.log(id);
-    </script>
 </html>

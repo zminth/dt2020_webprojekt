@@ -12,17 +12,24 @@
         <script src="../scripts/library.js"></script>
         <?php
             //Abfrage der Datenbank, ob der Benutzer existiert oder nicht und ob das Kennwort richtig ist.
-            $username = "test";
-            $password = "test1234";
 
-            if($_POST["user"]==$username && $_POST["key"]==$password){
-                echo "Anmeldung erfolgreich!";
-                session_start();
-                $_SESSION["authentifiziert"]=true;
-                $_SESSION["username"]=$_POST["user"];
+            include("../scripts/userAuthentification.php");
 
-                header("Location: ../dashboard/");
+            $username = $data["name"];
+            $password = $data["key"];
+
+            if($_POST["user"]&&$_POST["key"]){
+                echo $username;
+                if($_POST["user"]==$username && $_POST["key"]==$password){
+                    echo "Anmeldung erfolgreich!";
+                    session_start();
+                    $_SESSION["authentifiziert"]=true;
+                    $_SESSION["username"]=$username;
+
+                    header("Location: ../dashboard/");
+                }
             }
+            
         ?>
     </head>
 

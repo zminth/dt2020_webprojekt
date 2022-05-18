@@ -14,16 +14,17 @@
     $state = $_POST["state"];
     $category = $_POST["category"];
     $description = $_POST["description"];
+    $ersteller = $_POST["creator"];
 
     @$dbVerbindung = new mysqli($hostname, $username, $password, $database);
     if(mysqli_connect_errno() == 0){
 
-        $sql = "INSERT INTO `tickets`(`Titel`, `Text`, `BenutzerID`, `PrioID`, `KategorieID`, `StatusID`) VALUES ('$betreff','$description','','$priority','$category','$state');";
+        $sql = "INSERT INTO `tickets`(`ersteller`, `Titel`, `Text`, `BenutzerID`, `PrioID`, `KategorieID`, `StatusID`) VALUES ('$requesterName','$betreff','$description','0','$priority','$category','$state');";
         echo "$sql";
 
         //echo "Gruppe wurde angelegt!";
 
-        //$content = $dbVerbindung->query($sql);
+        $content = $dbVerbindung->query($sql);
         
 
         /* $sql = "SELECT * FROM `benutzer` WHERE `EMail`='$vorname.$nachname@ticketsystem.de';";
