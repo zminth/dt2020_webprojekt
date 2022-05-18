@@ -43,14 +43,14 @@
 
             <div id="main-ticketübersicht">
                 <div class="ticket-row">
-                    <div class="ticket-nummer">359590</div>
-                    <div class="ticket-prio">2</div>
-                    <div class="ticket-betreff"><a href="../request/?id=359590">PC defekt</a></div>
-                    <div class="ticket-status">geöffnet</div>
-                    <div class="ticket-ersteller">Schmitt, Peter</div>
-                    <div class="ticket-kategorie">Hardware</div>
-                    <div class="ticket-erstelldatum">27.04.2022</div>
-                    <div class="ticket-abschlussdatum">06.05.2022</div>
+                    <div class="ticket-nummer">ID</div>
+                    <div class="ticket-prio">Prio</div>
+                    <div class="ticket-betreff">Betreff</div>
+                    <div class="ticket-status">Status</div>
+                    <div class="ticket-ersteller">Requester</div>
+                    <div class="ticket-kategorie">Kategorie</div>
+                    <div class="ticket-erstelldatum">Erstelldatum</div>
+                    <div class="ticket-abschlussdatum">Abschlussdatum</div>
                 </div>
                 <script>
                     const xhttp = new XMLHttpRequest();
@@ -92,7 +92,7 @@
                         //Ticketstatus
                         ticketStatus = document.createElement("div");
                         ticketStatus.setAttribute("class","ticket-status");
-                        ticketStatus.appendChild(document.createTextNode(tickets[a].StatusID));
+                        ticketStatus.appendChild(document.createTextNode(tickets[a].Status));
                         ticketRow.appendChild(ticketStatus);
 
                         //Ticketersteller
@@ -104,7 +104,7 @@
                         //Ticketkategorie
                         ticketKategorie = document.createElement("div");
                         ticketKategorie.setAttribute("class","ticket-kategorie");
-                        ticketKategorie.appendChild(document.createTextNode(tickets[a].KategorieID));
+                        ticketKategorie.appendChild(document.createTextNode(tickets[a].Kategorie));
                         ticketRow.appendChild(ticketKategorie);
 
                         //TicketErstellDatum

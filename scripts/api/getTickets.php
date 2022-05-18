@@ -11,7 +11,11 @@
     @$dbVerbindung = new mysqli($hostname, $username, $password, $database);
     if(mysqli_connect_errno() == 0){
 
-        $sql = "SELECT * FROM `tickets` WHERE 1;";
+        $sql = "SELECT `TicketID`,`ersteller`,`creationDate`,`Titel`,`Text`,`BenutzerID`,`PrioID`, `kategorie`.`Kategorie`, `status`.`Status`
+        FROM `tickets`
+        INNER JOIN `kategorie` on `tickets`.`KategorieID`=`kategorie`.`KategorieID`
+        INNER JOIN `status` on `tickets`.`StatusID`=`status`.`StatusID`
+        ORDER BY `TicketID` ASC;";
 
         $content = $dbVerbindung->query($sql);
         if ($content->num_rows == 0){
