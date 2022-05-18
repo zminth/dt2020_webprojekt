@@ -11,7 +11,7 @@
     @$dbVerbindung = new mysqli($hostname, $username, $password, $database);
     if(mysqli_connect_errno() == 0){
 
-        $sql = "SELECT * FROM `kategorie` WHERE 1;";
+        $sql = "SELECT * FROM `benutzergruppen` WHERE 1;";
 
         $content = $dbVerbindung->query($sql);
         if ($content->num_rows == 0){
