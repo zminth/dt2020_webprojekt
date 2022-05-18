@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* Vorlage */
+.vorlage{
+    /* Position */
+    position: fixed;
+    left: auto;
+    right: 0px;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 60px;
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-body {
+    position: absolute;
+    background: blue;
+    left: 20px;
+    top: 50px;
+    width: 1398px;
+    height: max-content;
+}
