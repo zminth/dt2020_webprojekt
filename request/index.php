@@ -8,6 +8,14 @@
         <link rel="stylesheet" href="../scripts/request.css" />
         <script src="../scripts/library.js"></script>
         <script src="../scripts/jquery-3.6.0.js"></script>
+        <script>
+            var temp;
+
+
+            var url = window.location;
+            url = new URL(url);
+            const ticketID = url.searchParams.get("id");
+        </script>
         <?php
             include("../scripts/checkAuthenificationState.php");
         ?>
@@ -30,64 +38,51 @@
         </div>
         <div id="main">
             <div id="main-header">
-                <div id="main-header-ticketid">359590</div>
-                <div id="main-header-ticketbetreff">PC defekt</div>
-                <div id="main-header-anfragename">Anfragename: Schmitt, Peter</div>
-                <div id="main-header-fertigstellungsDatum">Fälligkeitsdatum: 06.05.2022 10:27</div>
+                <div id="main-header-ticketid"></div>
+                <div id="main-header-ticketbetreff"></div>
+                <div id="main-header-anfragename"></div>
+                <div id="main-header-fertigstellungsDatum"></div>
             </div>
 
             <div id="main-body">
-                <div id="main-ticket-beschreibung">Hallo wertes IT-Team, <br> können Sie bitte dafür sorgen, dass ich meinen PC wieder benutzen kann?<br/> Gruß<br/> Peter Schmitt</div>
+                <div id="main-ticket-beschreibung"></div>
                 <table id="main-ticketEinstellungen">
                     <tbody>
                         <tr>
                             <td>Prio:</td>
                             <td>
-                                <select name="" id="">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                </select>
+                                <select name="" id="main-ticketEinstellungen-priority"></select>
                             </td>
                         </tr>
                         <tr>
                             <td>Status:</td>
                             <td>
-                                <select name="" id="">
-                                    <option value="">Geöffnet</option>
-                                    <option value="">Warten</option>
-                                    <option value=""></option>
-                                    <option value="">Geschlossen</option>
-                                </select>
+                                <select name="" id="main-ticketEinstellungen-state"></select>
                             </td>
                         </tr>
                         <tr>
                             <td>Techniker:</td>
                             <td>
-                                <select name="" id="">
-                                    <option value="">Hauke, Dirk</option>
-                                    <option value="">Alfs, Jerome</option>
-                                    <option value="">Hagedorn, Kevin</option>
-                                    <option value="">Weigand, Dominik</option>
+                                <select name="" id="main-ticketEinstellungen-techniker">
+                                    <option value="0" id="nicht-zugewiesen">Nicht zugewiesen</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>Erstelldatum:</td>
-                            <td>
+                            <td id="main-ticketEinstellungen-erstelldatum">
                                 27.04.2022 10:27
                             </td>
                         </tr>
                         <tr>
                             <td>Kategorie:</td>
                             <td>
-                                <select name="" id="">
-                                    <option value="">Hardware</option>
+                                <select name="" id="main-ticketEinstellungen-category">
+                                    <!-- <option value="">Hardware</option>
                                     <option value="">Software</option>
                                     <option value="">Usermanagement</option>
                                     <option value="">Netzwerk</option>
-                                    <option value="">Sonstige</option>
+                                    <option value="">Sonstige</option> -->
                                 </select>
                             </td>
                         </tr>
@@ -107,13 +102,135 @@
                 </div>
                 
             </div>
+
+            <script>
+
+                //Ticketinformationen holen
+                /* var ticket; */
+                $.ajax({
+                    method: "POST",
+                    url: "../scripts/api/getTicket.php",
+                    data: { id: ticketID}
+                }).done(function( msg ) {
+                        ticket = msg;
+
+                        document.getElementById("main-header-ticketid").innerHTML = ticket.TicketID;
+                        document.title = "Anfrage "+ticket.TicketID;
+                        document.getElementById("main-header-ticketbetreff").innerHTML = ticket.Titel;
+                        document.getElementById("main-header-anfragename").innerHTML = 'Anfragename: '+ticket.ersteller;
+
+                        var erstelldatum = new Date(ticket.creationDate);
+                        var faellingkeitsdatum = new Date(erstelldatum.getTime()+691200000);
+
+                        document.getElementById("main-ticketEinstellungen-erstelldatum").innerHTML = ''+erstelldatum.getUTCDate()+'.'+(erstelldatum.getMonth()+1)+'.'+erstelldatum.getUTCFullYear()+' '+erstelldatum.getHours()+':'+erstelldatum.getMinutes();
+                        document.getElementById("main-header-fertigstellungsDatum").innerHTML = 'Fälligkeitsdatum: '+faellingkeitsdatum.getUTCDate()+'.'+(faellingkeitsdatum.getMonth()+1)+'.'+faellingkeitsdatum.getUTCFullYear()+' '+faellingkeitsdatum.getHours()+':'+faellingkeitsdatum.getMinutes()
+                        
+                        document.getElementById("main-ticket-beschreibung").innerHTML = ticket.Text;
+
+                        //Prioritäten-Informationen holen
+                        $.ajax({
+                        method: "POST",
+                        url: "../scripts/api/getPriority.php",
+                        data: { id: ticketID}
+                        }).done(function( msg ) {
+                                priority = msg;
+
+                                var a=0, optionElement;
+                                while(priority[a]){
+                                    optionElement = document.createElement("option");
+                                    optionElement.setAttribute("value", priority[a].PrioID);
+                                    if(priority[a].PrioID==ticket.PrioID){
+                                        optionElement.setAttribute("selected", "");
+                                    }
+                                    optionElement.appendChild(document.createTextNode(priority[a].Prio));
+                                    document.getElementById("main-ticketEinstellungen-priority").appendChild(optionElement);
+
+                                    a++;
+                                }
+                            });
+                        //Prioritäten-Informationen holen
+
+                        //Status-Informationen holen
+                        $.ajax({
+                        method: "POST",
+                        url: "../scripts/api/getState.php",
+                        data: { id: ticketID}
+                        }).done(function( msg ) {
+                                state = msg;
+
+                                var a=0, optionElement;
+                                while(state[a]){
+                                    optionElement = document.createElement("option");
+                                    optionElement.setAttribute("value", state[a].StatusID);
+                                    if(state[a].StatusID==ticket.StatusID){
+                                        optionElement.setAttribute("selected", "");
+                                    }
+                                    optionElement.appendChild(document.createTextNode(state[a].Status));
+                                    document.getElementById("main-ticketEinstellungen-state").appendChild(optionElement);
+
+                                    a++;
+                                }
+                            });
+                        //Status-Informationen holen
+                        
+                        //Techniker-Informationen holen
+                        $.ajax({
+                        method: "POST",
+                        url: "../scripts/api/getTechnician.php",
+                        data: { id: ticketID}
+                        }).done(function( msg ) {
+                                technician = msg;
+
+                                var a=0, optionElement;
+                                while(technician[a]){
+                                    optionElement = document.createElement("option");
+                                    optionElement.setAttribute("value", technician[a].BenutzerID);
+                                    if(ticket.BenutzerID==0){
+                                        document.getElementById("nicht-zugewiesen").setAttribute("selected", "");
+                                    }
+
+                                    if(technician[a].BenutzerID==ticket.BenutzerID){
+                                        optionElement.setAttribute("selected", "");
+                                    }
+                                    optionElement.appendChild(document.createTextNode(technician[a].Name+', '+technician[a].Vorname));
+                                    document.getElementById("main-ticketEinstellungen-techniker").appendChild(optionElement);
+
+                                    a++;
+                                }
+                            });
+                        //Techniker-Informationen holen
+
+                        //Kategorie-Informationen holen
+                        $.ajax({
+                        method: "POST",
+                        url: "../scripts/api/getCategory.php",
+                        data: { id: ticketID}
+                        }).done(function( msg ) {
+                            category = msg;
+                            console.log(category);
+
+                                var a=0, optionElement;
+                                while(category[a]){
+                                    optionElement = document.createElement("option");
+                                    optionElement.setAttribute("value", category[a].KategorieID); 
+                                    if(category[a].Kategorie==ticket.Kategorie){
+                                        optionElement.setAttribute("selected", "");
+                                    }
+                                    optionElement.appendChild(document.createTextNode(category[a].Kategorie));
+                                    document.getElementById("main-ticketEinstellungen-category").appendChild(optionElement);
+
+                                    a++;
+                                }
+                            });
+                        //Kategorie-Informationen holen
+                        
+                        
+                });
+            </script>
         </div>
         <div id="footer">Fußbereich</div>
     </body>
     <script>
-        var url = window.location;
-        url = new URL(url);
-        var id = url.searchParams.get("id");
-        console.log(id);
+        
     </script>
 </html>
