@@ -82,7 +82,7 @@ body{
     max-height: auto;
 
     /* Hintergrundfabe */
-    background-color: green;
+    background-color: #616161;
 
     /* Textformatierung */
     color: auto;
@@ -115,7 +115,7 @@ body{
     display: "";
 
     /* Hintergrundfabe */
-    background-color: yellow;
+    background-color: #00f5ff;
 
     /* Textformatierung */
     color: auto;
@@ -147,7 +147,7 @@ body{
     display: none;
 
     /* Hintergrundfabe */
-    background-color: red;
+    background-color: #00f5ff;
 
     /* Textformatierung */
     color: auto;
@@ -179,7 +179,7 @@ body{
     display: block;
 
     /* Hintergrundfabe */
-    background-color: yellow;
+    background-color: #00f5ff;
 
     /* Textformatierung */
     color: auto;
