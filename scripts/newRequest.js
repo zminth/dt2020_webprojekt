@@ -1,7 +1,5 @@
 function createTicket(){
     "use strict";
-
-    "use strict";
     //Variablen
     const requesterName = document.getElementById("main-body-table-requesterName").value;
     const email = document.getElementById("main-body-table-email").value;
