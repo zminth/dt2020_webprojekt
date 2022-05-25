@@ -7,7 +7,7 @@
 
     //Variablen
     $a = 0;
-    $ticketid = $_POST["id"];
+    $ticketid = $_POST["ticketID"];
     $technician = $_POST["techniker"];
 
     @$dbVerbindung = new mysqli($hostname, $username, $password, $database);
