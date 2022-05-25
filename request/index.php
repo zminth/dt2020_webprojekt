@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../scripts/request.css" />
         <script src="../scripts/library.js"></script>
         <script src="../scripts/jquery-3.6.0.js"></script>
+        <script src="../scripts/request.js"></script>
         <script>
             var temp;
 
@@ -51,7 +52,7 @@
                         <tr>
                             <td>Prio:</td>
                             <td>
-                                <select name="" id="main-ticketEinstellungen-priority"></select>
+                                <select name="" id="main-ticketEinstellungen-priority" onChange="setTicketPriority();" ></select>
                             </td>
                         </tr>
                         <tr>
