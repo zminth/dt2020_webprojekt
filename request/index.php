@@ -52,19 +52,19 @@
                         <tr>
                             <td>Prio:</td>
                             <td>
-                                <select name="" id="main-ticketEinstellungen-priority" onChange="setTicketPriority();" ></select>
+                                <select name="" id="main-ticketEinstellungen-priority" onChange="setTicketPriority(ticketID);"></select>
                             </td>
                         </tr>
                         <tr>
                             <td>Status:</td>
                             <td>
-                                <select name="" id="main-ticketEinstellungen-state"></select>
+                                <select name="" id="main-ticketEinstellungen-state" onChange="setTicketState(ticketID);"></select>
                             </td>
                         </tr>
                         <tr>
                             <td>Techniker:</td>
                             <td>
-                                <select name="" id="main-ticketEinstellungen-techniker">
+                                <select name="" id="main-ticketEinstellungen-techniker" onChange="setTicketTechnician(ticketID);">
                                     <option value="0" id="nicht-zugewiesen">Nicht zugewiesen</option>
                                 </select>
                             </td>
@@ -78,7 +78,7 @@
                         <tr>
                             <td>Kategorie:</td>
                             <td>
-                                <select name="" id="main-ticketEinstellungen-category">
+                                <select name="" id="main-ticketEinstellungen-category" onChange="setTicketCategory(ticketID);">
                                     <!-- <option value="">Hardware</option>
                                     <option value="">Software</option>
                                     <option value="">Usermanagement</option>
