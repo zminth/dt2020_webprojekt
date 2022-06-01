@@ -36,14 +36,14 @@
 #main-diagram-diagramWeeklyOverview{
     /* Position */
     position: absolute;
-    left: auto;
+    left: 40px;
     right: auto;
-    top: auto;
+    top: 20px;
     bottom: auto;
     z-index: auto;
 
     /* Weite & Höhe */
-    width: 1000px;
+    width: 750px;
     height: 300px;
     min-width: auto;
     min-height: auto;
@@ -54,7 +54,71 @@
     display: "";
 
     /* Hintergrundfabe */
-    background-color: none;
+    background-color: red;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-diagram-todaysTickets{
+    /* Position */
+    position: absolute;
+    left: 40px;
+    right: auto;
+    top: 350px;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 600px;
+    height: 300px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: green;
+
+    /* Textformatierung */
+    color: auto;
+    text-align: none;
+
+    /* Schriftgröße & Schriftart */
+    font-size: auto;
+    font-family: "";
+}
+
+#main-diagram-perWorker{
+    /* Position */
+    position: absolute;
+    left: 840px;
+    right: auto;
+    top: 20px;
+    bottom: auto;
+    z-index: auto;
+
+    /* Weite & Höhe */
+    width: 600px;
+    height: 300px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+
+    /* Elementsichbarkeit */
+    display: "";
+
+    /* Hintergrundfabe */
+    background-color: yellow;
 
     /* Textformatierung */
     color: auto;

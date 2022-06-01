@@ -1,4 +1,4 @@
-
+const diagramBackgroundColor = "#919191";
 
 function createMenu() {
 	"use strict";
@@ -93,8 +93,11 @@ function diagramWeeklyOverview(){
 
       var options = {
         title: diagramTile,
+        width: 750,
+        height: 300,
         hAxis: {title: '',  titleTextStyle: {color: '#333'}},
-        vAxis: {minValue: 0}
+        vAxis: {minValue: 0},
+        backgroundColor: diagramBackgroundColor,
       };
 
       var chart = new google.visualization.AreaChart(document.getElementById(elementName));
@@ -110,11 +113,10 @@ function diagramTicketsToday(){
 
         // Diagram-Variablen
         var diagramTile = "Tagesbilanz";
-        var test = [    ['Datum', 'Geöffnet', 'Geschlossen', 'warten'],
-                        ['25.04.22',250,30,0],
-                        ['26.04.22',200,100,30],
-                        ['27.04.22',225,33,125],
-                        ['28.04.22',175,80,40]
+        var test = [    ["Element", "Anzahl", { role: "style" } ],
+                        ['Eingegangen',250, "red"],
+                        ['In Bearbeitung',200, "orange"],
+                        ['Geschlossen',225, "yellow"]
                     ];
         var vorlage = [
             ["Element", "Density", { role: "style" } ],
@@ -124,7 +126,7 @@ function diagramTicketsToday(){
             ["Platinum", 21.45, "color: #e5e4e2"]
           ]
 
-        var daten = vorlage; // Übergabepunkt, an dem die Daten eingetragen werden müssen. Hier wird die Datenbank angebunden
+        var daten = test; // Übergabepunkt, an dem die Daten eingetragen werden müssen. Hier wird die Datenbank angebunden
 
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -145,6 +147,7 @@ function diagramTicketsToday(){
         height: 400,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
+        backgroundColor: diagramBackgroundColor,
       };
       var chart = new google.visualization.ColumnChart(document.getElementById(elementName));
       chart.draw(view, options);
@@ -159,11 +162,10 @@ function diagramPerWorker(){
 
         // Diagram-Variablen
         var diagramTile = "Übersicht pro Mitarbeiter";
-        var test = [    ['Datum', 'Geöffnet', 'Geschlossen', 'warten'],
-                        ['25.04.22',250,30,0],
-                        ['26.04.22',200,100,30],
-                        ['27.04.22',225,33,125],
-                        ['28.04.22',175,80,40]
+        var test = [    ['Status', ''],
+                        ['Geöffnet',250,],
+                        ['Geschlossen',200],
+                        ['warten',225]
                     ];
         var vorlage = [ ['Task', 'Hours per Day'],
             ['Work',     11],
@@ -173,7 +175,7 @@ function diagramPerWorker(){
             ['Sleep',    7]
         ];
 
-        var daten = vorlage; // Übergabepunkt, an dem die Daten eingetragen werden müssen. Hier wird die Datenbank angebunden
+        var daten = test; // Übergabepunkt, an dem die Daten eingetragen werden müssen. Hier wird die Datenbank angebunden
 
     google.charts.load("current", {packages:["corechart"]});
     google.charts.setOnLoadCallback(drawChart);
@@ -183,6 +185,9 @@ function diagramPerWorker(){
         var options = {
         title: diagramTile,
         is3D: true,
+        width: 600,
+        height: 300,
+        backgroundColor: diagramBackgroundColor,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById(elementName));
