@@ -11,14 +11,12 @@
         <script src="../scripts/management.js"></script>
         <script>
             var xttp, optionElement, a = 0;
-            $(function () {  
-                const groups = '<%= Session["groups"] %>'
-                console.log(name);
-                //$('#greeting').text(name)
-            });
         </script>
         <?php
             include("../scripts/checkAuthenificationState.php");
+        ?>
+        <?php
+            echo "<script>const benutzergruppen = ".$_SESSION["groups"].";</script>";
         ?>
     </head>
 
