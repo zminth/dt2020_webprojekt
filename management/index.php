@@ -18,6 +18,13 @@
         <?php
             echo "<script>const benutzergruppen = ".$_SESSION["groups"].";</script>";
         ?>
+        
+        <script>
+            if(benutzergruppen!=3){
+                alert("Sie sich nicht bereichtigt, auf diesen Inhalt zuzugreifen!");
+                window.history.back();
+            }
+        </script>
     </head>
 
     <body>
