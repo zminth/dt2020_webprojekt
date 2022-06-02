@@ -17,6 +17,7 @@
 
             $username = $data["name"];
             $password = $data["key"];
+            $groups = $data["group"];
 
             if($_POST["user"]&&$_POST["key"]){
                 echo $username;
@@ -25,6 +26,7 @@
                     session_start();
                     $_SESSION["authentifiziert"]=true;
                     $_SESSION["username"]=$username;
+                    $_SESSION["groups"]=$groups
 
                     header("Location: ../dashboard/");
                 }

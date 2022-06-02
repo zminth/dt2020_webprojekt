@@ -25,6 +25,7 @@
             while ($obj = $content->fetch_object()){
                 $data["name"] = $obj->Benutzername;
                 $data["key"] = $obj->Passwort;
+                $data["groups"]=$obj->GruppenID;
 
                 //$a++;
             }
