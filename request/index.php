@@ -163,7 +163,7 @@
                                 while(state[a]){
                                     optionElement = document.createElement("option");
                                     optionElement.setAttribute("value", state[a].StatusID);
-                                    if(state[a].StatusID==ticket.StatusID){
+                                    if(state[a].Status==ticket.Status){
                                         optionElement.setAttribute("selected", "");
                                     }
                                     optionElement.appendChild(document.createTextNode(state[a].Status));
@@ -208,7 +208,6 @@
                         data: { id: ticketID}
                         }).done(function( msg ) {
                             category = msg;
-                            console.log(category);
 
                                 var a=0, optionElement;
                                 while(category[a]){
