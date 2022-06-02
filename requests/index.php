@@ -111,7 +111,7 @@
                         ticketErstellDatum = document.createElement("div");
                         ticketErstellDatum.setAttribute("class","ticket-erstelldatum");
                         var erstelldatum = new Date(tickets[a].creationDate);
-                        ticketErstellDatum.appendChild(document.createTextNode(erstelldatum.getUTCDate()+'.'+(erstelldatum.getMonth()+1)+'.'+erstelldatum.getUTCFullYear()+' '+erstelldatum.getHours()+':'+erstelldatum.getMinutes()));
+                        ticketErstellDatum.appendChild(document.createTextNode(erstelldatum.getUTCDate()+'.'+(erstelldatum.getMonth()+1)+'.'+erstelldatum.getUTCFullYear()));
                         ticketRow.appendChild(ticketErstellDatum);
 
                         //TicketAbschlussDatum
