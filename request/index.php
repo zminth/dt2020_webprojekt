@@ -22,7 +22,7 @@
         ?>
     </head>
 
-    <body style="overflow: hidden;">
+    <body>
         <div id="navigation">
             <script>document.getElementById("navigation").innerHTML=createMenu();</script>
         </div>
