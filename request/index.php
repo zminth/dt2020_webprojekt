@@ -44,63 +44,92 @@
                 <div id="main-header-anfragename"></div>
                 <div id="main-header-fertigstellungsDatum"></div>
             </div>
+            <div id="main-menu">
+                <div id="main-menu-overview" onClick="ticketMenu('overview');">Übersicht</div>
+                <div id="main-menu-lösung" onClick="ticketMenu('lösung');">Lösung</div>
+                <div id="main-menu-arbeitsberichte" onClick="ticketMenu('arbeitsberichte');">Worklogs</div>
+            </div>
 
             <div id="main-body">
-                <div id="main-ticket-beschreibung"></div>
-                <table id="main-ticketEinstellungen">
-                    <tbody>
-                        <tr>
-                            <td>Prio:</td>
-                            <td>
-                                <select name="" id="main-ticketEinstellungen-priority" onChange="setTicketPriority(ticketID);"></select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Status:</td>
-                            <td>
-                                <select name="" id="main-ticketEinstellungen-state" onChange="setTicketState(ticketID);"></select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Techniker:</td>
-                            <td>
-                                <select name="" id="main-ticketEinstellungen-techniker" onChange="setTicketTechnician(ticketID);">
-                                    <option value="0" id="nicht-zugewiesen">Nicht zugewiesen</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Erstelldatum:</td>
-                            <td id="main-ticketEinstellungen-erstelldatum">
-                                27.04.2022 10:27
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kategorie:</td>
-                            <td>
-                                <select name="" id="main-ticketEinstellungen-category" onChange="setTicketCategory(ticketID);">
-                                    <!-- <option value="">Hardware</option>
-                                    <option value="">Software</option>
-                                    <option value="">Usermanagement</option>
-                                    <option value="">Netzwerk</option>
-                                    <option value="">Sonstige</option> -->
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="main-ticket-noteArea">
-                    <textarea name="" id="main-ticket-createNote" cols="30" rows="10" style="resize: none;" ></textarea>
-                    <button style="width: max-content;position: absolute;top: 120px;right: 0px;" onClick="addNote();">Hinweis hinzufügen</button>
-                    <div id="main-ticket-displayNotes">
-                        <div class="displayNote" >
-                            <div id="main-ticket-displayNote-time">04.05.2022 14:12</div>
-                            <div id="main-ticket-displayNote-creator">Hauke, Dirk</div>
-                            <div id="main-ticket-displayNote-message">Dies ist ein Hinweis!</div>
-                        </div>
-                        
+                <div id="main-body-overview" style="display: block;">
+                    <div id="main-ticket-beschreibung"></div>
+                    <table id="main-ticketEinstellungen">
+                        <tbody>
+                            <tr>
+                                <td>Prio:</td>
+                                <td>
+                                    <select name="" id="main-ticketEinstellungen-priority" onChange="setTicketPriority(ticketID);"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Status:</td>
+                                <td>
+                                    <select name="" id="main-ticketEinstellungen-state" onChange="setTicketState(ticketID);"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Techniker:</td>
+                                <td>
+                                    <select name="" id="main-ticketEinstellungen-techniker" onChange="setTicketTechnician(ticketID);">
+                                        <option value="0" id="nicht-zugewiesen">Nicht zugewiesen</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Erstelldatum:</td>
+                                <td id="main-ticketEinstellungen-erstelldatum">
+                                    27.04.2022 10:27
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kategorie:</td>
+                                <td>
+                                    <select name="" id="main-ticketEinstellungen-category" onChange="setTicketCategory(ticketID);">
+                                        <!-- <option value="">Hardware</option>
+                                        <option value="">Software</option>
+                                        <option value="">Usermanagement</option>
+                                        <option value="">Netzwerk</option>
+                                        <option value="">Sonstige</option> -->
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="main-ticket-noteArea">
+                        <textarea name="" id="main-ticket-createNote" cols="30" rows="10" style="resize: none;" required></textarea>
+                        <button style="width: max-content;position: absolute;top: 120px;right: 0px;" onClick="addNote();">Hinweis hinzufügen</button>
+                        <div id="main-ticket-displayNotes"></div>
                     </div>
                 </div>
+
+                <div id="main-body-lösung" style="display: none;">
+                    <textarea name="" id="" cols="30" rows="10" required></textarea>
+                    <button id="main-body-lösung-submit">Speichern</button>
+                    <div id="main-body-lösung-vorgeschlagen">
+                        Dies ist eine vorgeschlagene Lösung
+                    </div>
+                </div>
+
+                <div id="main-body-arbeitsberichte" style="display: none;">
+                    <table>
+                        <thead>
+                            <td>Bearbeiter</td>
+                            <td>Zeit</td>
+                            <td>Hinweis</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>dweigand</td>
+                                <td>2:30 Std</td>
+                                <td>Neue Coreswitche konfiguriert</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
                 
             </div>
 
@@ -111,7 +140,7 @@
                 $.ajax({
                     method: "POST",
                     url: "../scripts/api/getTicket.php",
-                    data: { id: ticketID}
+                    data: { id: ticketID }
                 }).done(function( msg ) {
                         ticket = msg;
 
@@ -223,6 +252,72 @@
                                 }
                             });
                         //Kategorie-Informationen holen
+
+                        //Notiz-Informationen holen
+                        $.ajax({
+                        method: "POST",
+                        url: "../scripts/api/getVermerke.php",
+                        data: { id: ticketID}
+                        }).done(function( msg ) {
+                            notiz = msg;
+
+                                var a=0, optionElement;
+                                while(notiz[a]){
+                                    
+
+                                    "use stirct";
+
+                                    //Variablen
+                                    var notesElement = document.getElementById("main-ticket-displayNotes");
+                                    var displayNoteElemement, creationTimeElement, noteCreatorElement, noteMessageElement, textNote;
+                                    const username = document.getElementById("head-logonUser-username").valueOf().firstChild.nodeValue;
+                                    var date = new Date(notiz[a].Timestamp);
+                                    date = new Date(date.getTime());
+                                    console.log(date);
+
+                                    //Anlegen des Elementes für einen Hinweis
+                                    displayNoteElemement = document.createElement("div");
+                                    displayNoteElemement.setAttribute("class", "displayNote");
+
+                                    //Anlegen des Elementes für den Erstellungszeitpunkt
+                                    creationTimeElement = document.createElement("div");
+                                    creationTimeElement.setAttribute("id", "main-ticket-displayNote-time");
+
+                                    textNote = document.createTextNode(date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()+" "+date.getHours()+":"+date.getMinutes());
+                                    creationTimeElement.appendChild(textNote);
+
+                                    displayNoteElemement.appendChild(creationTimeElement);
+
+                                    //Anlegen des Elementes für den Notizersteller
+                                    noteCreatorElement = document.createElement("div");
+                                    noteCreatorElement.setAttribute("id", "main-ticket-displayNote-creator");
+
+                                    textNote = document.createTextNode("Username");
+                                    noteCreatorElement.appendChild(textNote);
+
+                                    displayNoteElemement.appendChild(noteCreatorElement);
+
+                                    //Anlegen des Elementes für die Notiz
+                                    noteMessageElement = document.createElement("div");
+                                    noteMessageElement.setAttribute("id", "main-ticket-displayNote-message");
+                                    
+                                    textNote = document.createTextNode(notiz[a].Vermerk);
+                                    noteMessageElement.appendChild(textNote);
+
+                                    displayNoteElemement.appendChild(noteMessageElement);
+
+
+
+                                    notesElement.appendChild(displayNoteElemement);
+
+                                    a++;
+                                }
+                            });
+                        //Notiz-Informationen holen
+
+
+
+                                
                         
                         
                 });

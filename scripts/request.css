@@ -63,12 +63,67 @@
     font-family: "";
 }
 #main-body{
-    top: 115px !important;
+    top: 165px !important;
     width: 1368px !important;
     height: auto !important;
     background-color: #919191 !important;
     padding: 15px;
 }
+
+#main-menu-overview {
+    position: absolute;
+    top: 0px;
+    height: 60px;
+    left: 25px;
+    user-select: none;
+    padding-top: 17px;
+    width: 80px;
+    text-align: center;
+  }
+
+#main-menu-lösung{
+    position: absolute;
+    top: 0px;
+    height: 60px;
+    left: 105px;
+    user-select: none;
+    padding-top: 17px;
+    width: 70px;
+    text-align: center;
+}
+
+#main-menu-arbeitsberichte{
+    position: absolute;
+    top: 0px;
+    height: 60px;
+    left: 175px;
+    user-select: none;
+    padding-top: 17px;
+    width: 80px;
+    text-align: center;
+}
+
+
+#main-menu {
+    position: absolute;
+    left: 20px;
+    right: auto;
+    top: 115px;
+    bottom: auto;
+    z-index: auto;
+    width: 1398px;
+    height: 60px;
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+    display: "";
+    background-color: #919191;
+    color: auto;
+    text-align: none;
+    font-size: auto;
+    font-family: "";
+  }
 
 #main-ticket-beschreibung{
     margin-bottom: 20px;
