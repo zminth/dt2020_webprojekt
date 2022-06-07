@@ -51,7 +51,7 @@
             </div>
 
             <div id="main-body">
-                <div id="main-body-overview" style="display: block;">
+                <div id="main-body-overview" style="display: none;">
                     <div id="main-ticket-beschreibung"></div>
                     <table id="main-ticketEinstellungen">
                         <tbody>
@@ -102,12 +102,10 @@
                     </div>
                 </div>
 
-                <div id="main-body-lösung" style="display: none;">
-                    <textarea name="" id="" cols="30" rows="10" required></textarea>
-                    <button id="main-body-lösung-submit">Speichern</button>
-                    <div id="main-body-lösung-vorgeschlagen">
-                        Dies ist eine vorgeschlagene Lösung
-                    </div>
+                <div id="main-body-lösung" style="display: block;">
+                    <textarea name="" id="main-body-lösung-textarea" cols="30" rows="10" required style="resize: none;" placeholder="Lösung einfügen"></textarea>
+                    <button id="main-body-lösung-submit" style="width: max-content;position: relative;top: 25px;left: -74px;" onClick="saveSolution(ticketID);" >Speichern</button>
+                    <div id="main-body-lösung-vorgeschlagen">Es wurde noch keine Lösung hinzufügt!</div>
                 </div>
 
                 <div id="main-body-arbeitsberichte" style="display: none;">

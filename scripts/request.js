@@ -100,6 +100,7 @@ function addNote(){
   notesElement.appendChild(displayNoteElemement); */
 
   textNote = document.getElementById("main-ticket-createNote").value;
+  textNote = textNote.replace(/\n|\r/g, "<br>" );
 
   $.ajax({
       method: "POST",
@@ -128,5 +129,54 @@ function ticketMenu(selectedElement){
       document.getElementById("main-body-"+elements[a]).style.display="none";
     }
     a++;
+  }
+}
+
+function saveSolution(id){
+  var solution = document.getElementById("main-body-lösung-textarea").value;
+  solution = solution.replace(/\n|\r/g, "<br>" );
+  var vorgeschlageneLösung = document.getElementById("main-body-lösung-vorgeschlagen").valueOf().firstChild.nodeValue;
+
+  if(solution){
+    if(vorgeschlageneLösung=="Es wurde noch keine Lösung hinzufügt!"){
+      alert("Lösung INSERT");
+        $.ajax({
+          method: "POST",
+          url: "test../scripts/api/saveSolution.php",
+          data: { solution: solution, ticketid: id }
+        }).done(function( msg ){});
+    } else {
+      alert("Lösung UPDATE");
+      if(solution!=vorgeschlageneLösung){
+        $.ajax({
+          method: "POST",
+          url: "test../scripts/api/updateSolution.php",
+          data: { solution: solution, ticketid: id }
+        }).done(function( msg ){});
+      }
+
+    }
+    if(solution==vorgeschlageneLösung){
+      alert("lösung aktualisieren");
+        /* $.ajax({
+          method: "POST",
+          url: "../scripts/api/saveSolution.php",
+          data: { solution: solution, ticketid: id }
+        }).done(function( msg ){}); */
+    } else {
+      if(solution=="Es wurde noch keine Lösung hinzufügt!"){
+        alert
+      }
+    }
+    document.getElementById("main-body-lösung-vorgeschlagen").innerHTML=solution;
+      /* $.ajax({
+        method: "POST",
+        url: "../scripts/api/saveSolution.php",
+        data: { solution: solution, ticketid: id }
+      }).done(function( msg ) {
+          document.getElementById("main-body-lösung-textarea").innerHTML=solution;
+        }); */
+  } else {
+    alert("Bitte Text eingegen!");
   }
 }

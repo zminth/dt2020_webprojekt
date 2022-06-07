@@ -123,7 +123,33 @@
     text-align: none;
     font-size: auto;
     font-family: "";
-  }
+}
+
+#main-body-lösung-textarea{
+    position: unset;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+    width: 800px;
+    height: 100px;
+    min-width: auto;
+    min-height: auto;
+    display: "";
+    background-color: "none";
+    color: auto;
+    text-align: none;
+    font-size: auto;
+    font-family: "";
+}
+
+#main-body-lösung-vorgeschlagen {
+    position: relative;
+    top: 30px;
+    height: max-content;
+    padding-bottom: 45px;
+}
 
 #main-ticket-beschreibung{
     margin-bottom: 20px;
