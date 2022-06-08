@@ -10,7 +10,7 @@
     bottom: auto;
     z-index: auto;
 
-    /* Weite & Höhe */
+    /* Weite & HÃ¶he */
     width: 60px;
     height: 100%;
     min-width: auto;
@@ -20,20 +20,20 @@
     display: "";
 
     /* Hintergrundfabe */
-    background-color: red;
+    background-color: #919191;
 
     /* Textformatierung */
     color: auto;
     text-align: none;
 
-    /* Schriftgröße & Schriftart */
+    /* SchriftgrÃ¶ÃŸe & Schriftart */
     font-size: auto;
     font-family: "";
 }
 
 #main-body {
     position: absolute;
-    background: blue;
+    background: #919191;
     left: 20px;
     top: 50px;
     width: 1398px;
@@ -45,7 +45,7 @@
     width: 170px;
     height: 31px;
     text-align: center;
-    background: red;
+    background: #00f5ff;
     font-size: 14pt;
     padding-top: 9px;
     user-select: none;
@@ -57,7 +57,7 @@
     width: 170px;
     height: 31px;
     text-align: center;
-    background: red;
+    background: #00f5ff;
     font-size: 14pt;
     padding-top: 9px;
     user-select: none;
@@ -71,7 +71,7 @@
     width: 170px;
     height: 31px;
     text-align: center;
-    background: red;
+    background: #00f5ff;
     font-size: 14pt;
     padding-top: 9px;
     user-select: none;
@@ -96,7 +96,7 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: orange;
+    background-color: #919191;
 }
 
 #main-body-window-userCreation-close {
@@ -114,7 +114,7 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: orange;
+    background-color: #919191;
 }
 
 #main-body-window-groupManagement-close {
@@ -132,7 +132,7 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: orange;
+    background-color: #919191;
 }
 
 #main-body-window-category-close {
