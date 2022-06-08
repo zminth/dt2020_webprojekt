@@ -24,7 +24,7 @@
             ];
         }else{
             while ($obj = $content->fetch_object()){
-                $data = $obj;
+                $data[$a] = $obj;
 
                 $a++;
             }
